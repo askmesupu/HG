@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HourGlass - Watch Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar button -->
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">Contact</a>
+        <a href="https://www.facebook.com/share/1Bn8QGmDPj/" target="_blank">Developer Contact</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="https://i.ibb.co.com/SX0zPn51/illustrator92628.png" alt="HourGlass Logo" class="logo">
+        <h1 class="brand">HourGlass</h1>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="section-title">Watch Details</section>
+    <div id="product-details" class="product-grid">
+        <!-- JS will load single watch details -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Developed by Supto
+    </footer>
+
+    <script>
+        // Sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar.style.width === "250px") sidebar.style.width = "0";
+            else sidebar.style.width = "250px";
+        }
+
+        // Get watch path from query
+        const urlParams = new URLSearchParams(window.location.search);
+        const watchPath = urlParams.get("watch");
+
+        // GitHub config
+        const GITHUB_USER = "YOUR_GITHUB_USERNAME";
+        const REPO = "HourGlass";
+        const BRANCH = "main";
+
+        async function fetchJSON(path) {
+            const url = `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/${BRANCH}/${path}`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error("Cannot fetch " + url);
+            return await res.json();
+        }
+
+        async function loadWatch() {
+            try {
+                const watch = await fetchJSON(`${watchPath}/watch.json`);
+                const container = document.getElementById("product-details");
+
+                const card = document.createElement("div");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <img src="${watch.img}" alt="${watch.name}">
+                    <h3>${watch.brand} - ${watch.name}</h3>
+                    <p class="price">${watch.price} BDT</p>
+                    <p>${watch.description}</p>
+                    <button ${watch.stock ? "" : "class='disabled' disabled"} onclick='addToCart("${watchPath}")'>
+                        ${watch.stock ? "Add to Cart" : "Out of Stock"}
+                    </button>
+                    <button onclick="window.location.href='order.html?watch=${encodeURIComponent(watchPath)}'" 
+                        ${watch.stock ? "" : "class='disabled' disabled"}>
+                        ${watch.stock ? "Buy Now" : "Out of Stock"}
+                    </button>
+                    <br><br>
+                    <button onclick="window.location.href='index.html'">Back to Home</button>
+                `;
+
+                container.appendChild(card);
+
+            } catch(err) {
+                console.error(err);
+            }
+        }
+
+        function addToCart(watchPath) {
+            fetchJSON(`${watchPath}/watch.json`).then(watch => {
+                let cart = JSON.parse(localStorage.getItem("hg_cart") || "[]");
+                const idx = cart.findIndex(i => i.path === watchPath);
+                if (idx >= 0) cart[idx].qty += 1;
+                else cart.push({ path: watchPath, qty: 1, name: watch.name, price: watch.price, img: watch.img });
+                localStorage.setItem("hg_cart", JSON.stringify(cart));
+                alert("Added to Cart");
+            }).catch(err => console.error(err));
+        }
+
+        document.addEventListener("DOMContentLoaded", loadWatch);
+    </script>
+</body>
+</html>
