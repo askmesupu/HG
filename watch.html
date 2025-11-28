@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HourGlass — Product</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="openSidebarDetail" class="menu-btn" aria-label="Open menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <div class="brand-area">
+      <img src="assets/logo.png" alt="HourGlass logo" class="logo" />
+      <span class="brand">HourGlass</span>
+    </div>
+
+    <div class="top-actions">
+      <a class="icon-btn" href="cart.html" title="Cart">Cart</a>
+    </div>
+  </header>
+
+  <div id="overlay" class="overlay"></div>
+  <nav id="sidebar" class="sidebar" aria-hidden="true">
+    <button id="closeSidebarDetail" class="close-btn" aria-label="Close menu">&times;</button>
+    <div class="sidebar-content">
+      <h3 class="sidebar-title">Menu</h3>
+      <ul class="sidebar-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#top-selling">Top Selling</a></li>
+        <li><a href="#men">Men's Watches</a></li>
+        <li><a href="#women">Women's Watches</a></li>
+        <li><a href="#popular">Popular</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">Contact (HourGlass Facebook)</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="product-page">
+    <div class="product-container">
+      <div class="product-image">
+        <img id="product-img" src="" alt="product image">
+        <div id="badge-stock" class="badge out-of-stock" hidden>OUT OF STOCK</div>
+      </div>
+
+      <div class="product-info">
+        <h1 id="product-name"></h1>
+        <h3 id="product-brand" class="muted"></h3>
+        <p id="product-desc" class="desc"></p>
+        <div class="price-row">
+          <div id="product-price" class="price"></div>
+        </div>
+
+        <div class="product-actions">
+          <button id="add-to-cart" class="btn primary">Add to Cart</button>
+          <button id="buy-now" class="btn ghost">Buy Now</button>
+        </div>
+
+        <div class="back-row">
+          <a href="index.html" class="link">← Back to home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="watch.js" defer></script>
+</body>
+          </html>
