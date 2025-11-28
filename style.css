@@ -1,0 +1,139 @@
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* ---------- Root colors & reset ---------- */
+:root{
+  --bg: #000000;
+  --panel: #0f0f10;
+  --muted: #bdbdbd;
+  --accent: #e6b35a;
+  --danger: #ff4b4b;
+  --success: #39d98a;
+  --card-radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;padding:0;font-family:'Montserrat',system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+
+/* ---------- Overlay & sidebar ---------- */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1400;opacity:0;visibility:hidden;transition:all .25s ease}
+.overlay.show{opacity:1;visibility:visible}
+
+/* Sidebar */
+.sidebar{position:fixed;top:0;left:-360px;width:340px;height:100vh;background:linear-gradient(180deg,#101010,#0b0b0b);padding:22px;z-index:1500;transition:left .28s cubic-bezier(.2,.95,.3,1);overflow:auto;border-right:1px solid rgba(255,255,255,0.03)}
+.sidebar.show{left:0}
+.sidebar-close{background:none;border:0;color:#fff;font-size:30px;cursor:pointer;display:block;margin-left:auto}
+.sidebar-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.sidebar-brand img{height:56px;border-radius:8px}
+.brand-big{font-family:'Rock Salt',cursive;font-size:32px;color:var(--accent);letter-spacing:0.5px}
+
+/* Sidebar nav */
+.sidebar-nav{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.sidebar-nav a{color:var(--muted);text-decoration:none;padding:10px;border-radius:8px}
+.sidebar-nav a:hover{color:#fff;background:rgba(255,255,255,0.02)}
+
+/* ---------- TOPBAR ---------- */
+.topbar{position:sticky;top:0;z-index:1450;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)}
+.brand-left{display:flex;align-items:center;gap:12px}
+.logo{height:64px;width:auto;border-radius:8px}
+.brand-left .brand-big{font-family:'Rock Salt',cursive;font-size:34px;color:var(--accent)}
+.top-right{display:flex;align-items:center;gap:12px}
+
+/* hamburger button & animation to X */
+.menu-btn{width:48px;height:48px;border-radius:10px;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative;z-index:1600}
+.hamburger{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.line2{margin:6px 0}
+.menu-btn.active .line1{transform:translateY(6px) rotate(45deg)}
+.menu-btn.active .line2{opacity:0}
+.menu-btn.active .line3{transform:translateY(-6px) rotate(-45deg)}
+
+/* cart icon placeholder */
+.icon{color:#fff;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);text-decoration:none}
+
+/* ---------- HERO ---------- */
+.hero{padding:48px 20px 10px;text-align:center}
+.hero-title{font-family:'Rock Salt',cursive;font-size:48px;margin:4px 0}
+.hero-sub{color:var(--muted);margin:0;font-size:16px}
+
+/* ---------- SECTIONS & GRIDS ---------- */
+.section{padding:20px 20px 36px}
+.section-title{font-size:22px;margin:0 0 12px;color:#fff}
+.product-carousel{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+
+/* ---------- PRODUCT CARD ---------- */
+.product-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:12px;border-radius:12px;position:relative;transition:transform .18s ease,box-shadow .18s ease;overflow:hidden}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.65)}
+.product-media{position:relative;border-radius:10px;overflow:hidden;background:#0b0b0b}
+.product-media img{width:100%;height:220px;object-fit:cover;display:block}
+.badge-stock{position:absolute;top:10px;right:10px;background:var(--danger);color:#fff;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px}
+.product-info{padding-top:10px}
+.product-title{font-size:16px;font-weight:600;margin-bottom:6px}
+.product-brand{font-size:13px;color:var(--muted);margin-bottom:8px}
+.product-price{font-size:16px;font-weight:700;color:var(--accent)}
+.product-old{font-size:14px;text-decoration:line-through;color:#888;margin-right:8px}
+
+/* product action buttons */
+.product-actions{display:flex;gap:10px;margin-top:10px}
+.btn{flex:1;padding:10px 12px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,#e6b35a,#ffd58f);color:#111}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff}
+
+/* disabled */
+.btn[disabled]{background:#333;opacity:0.6;cursor:not-allowed}
+
+/* ---------- GALLERY (product page) ---------- */
+.product-page{padding:28px 20px}
+.product-container{max-width:1100px;margin:20px auto;display:grid;grid-template-columns:1fr 420px;gap:28px}
+@media(max-width:980px){.product-container{grid-template-columns:1fr;padding:0 12px}}
+
+.gallery{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;padding-bottom:8px}
+.gallery img{width:100%;max-width:640px;border-radius:12px;object-fit:cover;scroll-snap-align:center;flex-shrink:0}
+.thumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.thumbs img{width:72px;height:72px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent}
+.thumbs img.active{border-color:var(--accent)}
+
+/* product right */
+.product-right h1{margin:0;font-size:26px}
+.muted{color:var(--muted);margin-top:6px}
+.price-area{margin:12px 0}
+.price-area .old{display:inline-block;margin-right:8px;color:#888;text-decoration:line-through}
+.price-area .now{font-size:22px;color:var(--accent);font-weight:800}
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:all .6s ease-out}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* ---------- CART PAGE ---------- */
+.cart-page{padding:28px 20px}
+.cart-wrap{max-width:1100px;margin:18px auto}
+.cart-title{font-size:28px;margin-bottom:12px}
+.cart-container{display:flex;flex-direction:column;gap:12px}
+.cart-item{display:flex;gap:12px;align-items:center;background:var(--panel);padding:12px;border-radius:12px}
+.cart-item img{width:110px;height:80px;object-fit:cover;border-radius:8px}
+.cart-meta{flex:1}
+.cart-meta h4{margin:0;font-size:18px}
+.qty-controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+.qty-controls button{padding:6px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.03);color:#fff;cursor:pointer}
+.remove-item{background:var(--danger);color:#fff;border-radius:8px;padding:8px 10px;border:0}
+
+/* summary */
+.cart-summary{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:12px}
+.cart-total{font-size:20px;font-weight:800}
+.cart-buttons{display:flex;gap:12px}
+.proceed{background:linear-gradient(90deg,#39d98a,#27b26a);color:#041; padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:800}
+.clear-cart{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 18px;border-radius:10px;color:#fff;cursor:pointer}
+
+/* ---------- FOOTER ---------- */
+.footer{padding:30px;text-align:center;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);margin-top:40px}
+.footer a{color:var(--accent);text-decoration:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:720px){
+  .brand-left .brand-big{font-size:26px}
+  .hero-title{font-size:32px}
+  .product-container{grid-template-columns:1fr}
+  .logo{height:52px}
+  .sidebar{width:290px}
+  .sidebar.show{left:0}
+                                                                                                                                                                                           }
