@@ -1,0 +1,146 @@
+/* Body & background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* standard font for all normal text */
+    background: #000;
+    color: #fff;
+}
+
+/* Header & Logo */
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.sidebar-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 70px; /* bigger logo */
+    margin-right: 10px;
+}
+
+/* HourGlass Text */
+.hourglass-text {
+    font-family: 'Chalkboard', cursive; /* BlackBoard style */
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Sidebar */
+aside#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+aside#sidebar.active {
+    left: 0;
+}
+aside#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+aside#sidebar ul li a {
+    display: block;
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Arial, sans-serif; /* standard pixel style for sidebar text */
+}
+aside#sidebar ul li a:hover {
+    background: #333;
+}
+
+/* Main content and cards */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+h1, h2, h3, p {
+    font-family: Arial, sans-serif; /* standard pixel font */
+}
+
+/* Watch Cards */
+#watch-container, #watch-container-men, #watch-container-women, #watch-container-popular {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.watch-card {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.watch-card:hover {
+    transform: translateY(-5px);
+}
+.watch-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.watch-card button, .cart-buttons button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #fff;
+    color: #000;
+    font-family: Arial, sans-serif; /* standard font */
+}
+.cart-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+.cart-buttons button {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Footer */
+footer {
+    background:#111; 
+    padding:20px; 
+    text-align:center; 
+    color:#fff; 
+    font-family: Arial, sans-serif; /* standard font */
+}
+footer p {
+    font-size:18px; 
+    font-weight:bold; 
+    margin:5px 0;
+    color: #ffcc00; /* highlighted */
+}
+footer div img {
+    width:30px; 
+    height:30px;
+    margin:0 10px;
+}
