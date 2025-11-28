@@ -1,0 +1,85 @@
+/* Body and general */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Courier New', monospace;background:#000;color:#fff;overflow-x:hidden;}
+
+/* Header + Logo */
+header{
+    display:flex;
+    align-items:center;
+    padding:10px 20px;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:#000;
+    height:70px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    height:100%;
+}
+
+.logo img{
+    height:50px;
+    width:auto;
+    margin-right:10px;
+}
+
+.hourglass-text{
+    font-size:28px;
+    font-weight:bold;
+    color:#fff;
+    margin:0;
+}
+
+/* Hamburger / Sidebar */
+.hamburger{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:25px;
+    height:20px;
+    cursor:pointer;
+    margin-right:20px;
+    z-index:1001;
+}
+.hamburger span{
+    display:block;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+    transition:0.3s;
+}
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* Sidebar */
+#sidebar{
+    position:fixed;
+    left:-250px;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#111;
+    transition:0.3s;
+    z-index:999;
+    padding-top:70px;
+}
+#sidebar.active{left:0;}
+#sidebar ul{list-style:none;}
+#sidebar ul li{padding:15px 20px;}
+#sidebar ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    display:block;
+    transition:0.3s;
+}
+#sidebar ul li a:hover{color:#0ff;}
