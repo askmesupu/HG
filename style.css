@@ -1,0 +1,52 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Black Ops One', monospace; background:#000; color:#fff;}
+a{text-decoration:none;color:#fff;}
+
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:linear-gradient(90deg,#000,#222);position:fixed;width:100%;top:0;z-index:1000;}
+header .logo{display:flex;align-items:center;}
+header .logo img{height:80px;margin-right:15px;}
+header .brand{font-size:42px;font-weight:bold;color:#fff;text-shadow:2px 2px #333;}
+.menu-toggle{font-size:36px;cursor:pointer;color:#fff;}
+
+/* Sidebar */
+.sidebar{position:fixed;top:0;left:-300px;width:250px;height:100%;background:#111;transition:0.3s;padding-top:60px;z-index:1001;overflow-y:auto;}
+.sidebar ul{list-style:none;}
+.sidebar li{padding:15px;}
+.sidebar li a{color:#fff;font-weight:bold;}
+.sidebar.show{left:0;}
+.close-sidebar{position:absolute;top:10px;right:15px;font-size:32px;cursor:pointer;color:#fff;}
+
+/* Main sections */
+main{padding-top:100px;}
+.watch-section{padding:20px;}
+.watch-section h2{margin-bottom:20px;font-size:32px;color:#fff;text-shadow:1px 1px #333;}
+.watch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:25px;}
+
+/* Watch Card */
+.watch-card{background:#111;border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;transition:0.3s;box-shadow:0 0 15px rgba(255,255,255,0.05);}
+.watch-card img{width:100%;border-radius:12px;cursor:pointer;transition:0.3s;}
+.watch-card img:hover{transform:scale(1.05);}
+.watch-name{margin-top:10px;font-size:18px;font-weight:bold;}
+.watch-price{margin-top:5px;font-size:16px;}
+.original-price{text-decoration:line-through;color:grey;margin-right:5px;}
+.discounted-price{color:#ff5959;font-weight:bold;margin-left:5px;}
+.buy-btn{margin-top:10px;padding:10px 15px;background:linear-gradient(45deg,#ff3c3c,#ff5959);border:none;border-radius:8px;color:#fff;font-weight:bold;cursor:pointer;transition:0.2s;}
+.buy-btn:hover{transform:scale(1.05);}
+.buy-btn:disabled{background:grey;cursor:not-allowed;opacity:0.6;}
+
+/* Scroll animation */
+.fade-up{opacity:0;transform:translateY(20px);transition:all 0.6s ease-out;}
+.fade-up.show{opacity:1;transform:translateY(0);}
+
+/* Footer */
+footer{text-align:center;padding:15px;background:#111;margin-top:20px;}
+footer a{color:#fff;font-weight:bold;margin:0 10px;}
+
+/* Responsive */
+@media(max-width:600px){
+  .watch-grid{grid-template-columns:1fr;}
+  header .brand{font-size:28px;}
+  header .logo img{height:60px;margin-right:10px;}
+  .buy-btn{padding:8px 12px;font-size:14px;}
+}
