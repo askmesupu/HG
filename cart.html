@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HourGlass — Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button id="openSidebarCart" class="menu-btn" aria-label="Open menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <div class="brand-area">
+      <img src="assets/logo.png" alt="HourGlass logo" class="logo" />
+      <span class="brand">HourGlass</span>
+    </div>
+
+    <div class="top-actions"><a class="icon-btn" href="cart.html">Cart</a></div>
+  </header>
+
+  <div id="overlay" class="overlay"></div>
+  <nav id="sidebar" class="sidebar" aria-hidden="true">
+    <button id="closeSidebarCart" class="close-btn" aria-label="Close menu">&times;</button>
+    <div class="sidebar-content">
+      <h3 class="sidebar-title">Menu</h3>
+      <ul class="sidebar-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#top-selling">Top Selling</a></li>
+        <li><a href="#men">Men's Watches</a></li>
+        <li><a href="#women">Women's Watches</a></li>
+        <li><a href="#popular">Popular</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="cart-page">
+    <h1 class="section-title">Your Cart</h1>
+    <div class="cart-container" id="cart-container">
+      <!-- items will be injected -->
+    </div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <div>Total</div>
+        <div id="cart-total">0 BDT</div>
+      </div>
+      <div class="checkout-actions">
+        <button id="checkout-btn" class="btn primary">Proceed to Checkout</button>
+        <button id="clear-cart" class="btn ghost">Clear Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
