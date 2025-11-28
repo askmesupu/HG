@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HourGlass — Cart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <button id="closeSidebarCart" class="sidebar-close">✕</button>
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <img src="assets/logo.png" alt="HourGlass" onerror="this.onerror=null;this.src='https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg'">
+        <div class="brand-big">HourGlass</div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html">Home</a>
+        <a href="#top-selling">Top Selling</a>
+        <a href="#men">Men's Watches</a>
+        <a href="#women">Women's Watches</a>
+        <a href="#popular">Popular</a>
+        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank" rel="noopener">HourGlass Facebook</a>
+      </nav>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <div class="brand-left">
+      <img class="logo" src="assets/logo.png" alt="HourGlass" onerror="this.onerror=null;this.src='https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg'">
+      <div class="brand-big">HourGlass</div>
+    </div>
+
+    <div class="top-right">
+      <a class="icon" href="index.html">Home</a>
+      <button id="menuBtnCart" class="menu-btn" aria-label="Open menu">
+        <span class="hamburger line1"></span>
+        <span class="hamburger line2"></span>
+        <span class="hamburger line3"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="cart-wrap">
+      <h1 class="cart-title">Your Cart</h1>
+
+      <div id="cart-container" class="cart-container"></div>
+
+      <div class="cart-summary">
+        <div class="summary-left">
+          <a href="index.html" class="back-btn">← Continue shopping</a>
+        </div>
+        <div class="summary-right">
+          <div class="summary-row"><span>Total:</span> <strong id="cart-total">0 BDT</strong></div>
+          <div class="cart-buttons">
+            <button id="checkout-btn" class="proceed">Proceed to Order</button>
+            <button id="clear-cart" class="clear-cart">Clear Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
