@@ -3,45 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HourGlass - Watches</title>
+    <title>HourGlass - Watch Details</title>
+
+    <!-- Pixel Minecraft Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <div class="sidebar-toggle" id="sidebarToggle">☰</div>
-    <div class="logo">
-        <img src="https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg" alt="HourGlass Logo">
-        <span class="hourglass-text">HourGlass</span>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mens.html">Men’s Collection</a></li>
+            <li><a href="womens.html">Women’s Collection</a></li>
+            <li><a href="topselling.html">Top Selling</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="developer.html">Developer Contact</a></li>
+        </ul>
     </div>
-</header>
 
-<aside id="sidebar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="watch.html?type=Men">Men's Watch</a></li>
-        <li><a href="watch.html?type=Women">Women's Watch</a></li>
-        <li><a href="watch.html?type=Top-Selling">Top Selling</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">Contact</a></li>
-    </ul>
-</aside>
+    <!-- Header -->
+    <header>
+        <div id="menu-btn" class="menu-btn">☰</div>
+        <h1 class="logo">HOURGLASS</h1>
+        <div class="icons">
+            <a href="https://facebook.com/supto" target="_blank">📘</a>
+            <a href="https://instagram.com/" target="_blank">📸</a>
+        </div>
+    </header>
 
-<main>
-    <h2 id="watch-page-title"></h2>
-    <div id="watch-container-page"></div>
-</main>
+    <!-- Page Content -->
+    <section class="main-content">
+        <h2>Watch Details</h2>
 
-<footer>
-    <p class="developer">Developed by Supto</p>
-    <p class="other">Follow HourGlass on social media</p>
-    <div>
-        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank"><img src="fb-icon.png" alt="FB"></a>
-        <a href="https://www.instagram.com/hourglass.watches.bd?igsh=MWpkNDhpbHpraDVy" target="_blank"><img src="ig-icon.png" alt="IG"></a>
-    </div>
-</footer>
+        <div class="watch-container">
+            <img src="images/sample-watch.jpg" class="watch-image">
 
-<script src="script.js"></script>
-<script src="watch.js"></script>
+            <div class="watch-info">
+                <h3>Premium Men's Watch</h3>
+                <p>High quality stainless-steel watch with luxury finish.</p>
+                <p class="price">Price: 1800 BDT</p>
+
+                <button class="add-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://facebook.com/supto" target="_blank">📘</a>
+            <a href="https://instagram.com" target="_blank">📸</a>
+        </div>
+        <p class="dev">Developed by Supto</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-  </html>
+    </html>
