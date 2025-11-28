@@ -1,9 +1,17 @@
 const sidebarToggle = document.querySelector('.sidebar-toggle');
 const sidebar = document.getElementById('sidebar');
 
+// Initially hide sidebar
+sidebar.style.left = '-250px';
+
 sidebarToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    sidebarToggle.textContent = sidebar.classList.contains('active') ? '✖' : '☰';
+    if (sidebar.style.left === '-250px') {
+        sidebar.style.left = '0';
+        sidebarToggle.textContent = '✖'; // Change to cross
+    } else {
+        sidebar.style.left = '-250px';
+        sidebarToggle.textContent = '☰'; // Change back to three lines
+    }
 });
 
 // Scroll animation for watch cards
