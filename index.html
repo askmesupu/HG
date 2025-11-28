@@ -1,56 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HourGlass - Home</title>
+    <title>HourGlass Watches</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
+<body><!-- Header -->
 <header>
-    <div class="sidebar-toggle" id="sidebarToggle">☰</div>
+    <div class="sidebar-toggle">☰</div>
     <div class="logo">
         <img src="https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg" alt="HourGlass Logo">
-        <span class="hourglass-text">HourGlass</span>
     </div>
+    <div class="hourglass-text">HourGlass</div>
 </header>
 
-<aside id="sidebar">
+<!-- Sidebar -->
+<nav id="sidebar">
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="watch.html?type=Men">Men's Watch</a></li>
-        <li><a href="watch.html?type=Women">Women's Watch</a></li>
-        <li><a href="watch.html?type=Top-Selling">Top Selling</a></li>
+        <li><a href="watch.html?category=Men">Men's Watch</a></li>
+        <li><a href="watch.html?category=Women">Women's Watch</a></li>
+        <li><a href="watch.html?category=Top-Selling">Top Selling</a></li>
+        <li><a href="watch.html?category=Popular">Popular</a></li>
         <li><a href="cart.html">Cart</a></li>
-        <li><a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">Contact</a></li>
+        <li><a href="https://www.facebook.com/share/1Bn8QGmDPj/" target="_blank">Developer Contact</a></li>
     </ul>
-</aside>
+</nav>
 
+<!-- Main Content -->
 <main>
     <h2>Top Selling Watches</h2>
-    <div id="watch-container"></div>
+    <div id="top-selling-container" class="watch-container">
+        <!-- Top Selling watches dynamically loaded here -->
+    </div>
 
     <h2>Men's Watches</h2>
-    <div id="watch-container-men"></div>
+    <div id="men-container" class="watch-container">
+        <!-- Men's watches dynamically loaded here -->
+    </div>
 
     <h2>Women's Watches</h2>
-    <div id="watch-container-women"></div>
+    <div id="women-container" class="watch-container">
+        <!-- Women's watches dynamically loaded here -->
+    </div>
 
     <h2>Popular Watches</h2>
-    <div id="watch-container-popular"></div>
+    <div id="popular-container" class="watch-container">
+        <!-- Popular watches dynamically loaded here -->
+    </div>
 </main>
 
+<!-- Footer -->
 <footer>
-    <p class="developer">Developed by Supto</p>
-    <p class="other">Follow HourGlass on social media</p>
-    <div>
-        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank"><img src="fb-icon.png" alt="FB"></a>
-        <a href="https://www.instagram.com/hourglass.watches.bd?igsh=MWpkNDhpbHpraDVy" target="_blank"><img src="ig-icon.png" alt="IG"></a>
+    <div class="developer">Developed by Supto</div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"/>
+        </a>
+        <a href="https://www.instagram.com/hourglass.watches.bd?igsh=MWpkNDhpbHpraDVy" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"/>
+        </a>
     </div>
 </footer>
 
 <script src="script.js"></script>
 <script src="watch.js"></script>
+
 </body>
-  </html>
+</html>
