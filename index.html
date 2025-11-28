@@ -1,51 +1,82 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HourGlass Watches</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HourGlass Watches</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!-- Pixel/Minecraft style font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-<body><header>
-    <div class="sidebar-toggle">☰</div>
-    <div class="logo">
-        <img src="https://i.ibb.co.com/MD4g4YFS/resize-1762250039179255336320251104154152.jpg" alt="HourGlass Logo">
-    </div>
-    <div class="hourglass-text">HourGlass</div>
-</header><div id="sidebar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="watch.html?category=Men">Men's Watch</a></li>
-        <li><a href="watch.html?category=Women">Women's Watch</a></li>
-        <li><a href="watch.html?category=Popular">Popular Watch</a></li>
-        <li><a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">Contact</a></li>
-    </ul>
-</div><main>
-    <section class="watch-container" id="top-selling">
-        <h2>Top Selling</h2>
-        <!-- JS will populate watches here -->
-    </section><section class="watch-container" id="men-watch">
-    <h2>Men's Watches</h2>
-</section>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="watch.html?category=Top-Selling">Top Selling</a></li>
+            <li><a href="watch.html?category=Men">Men's Watch</a></li>
+            <li><a href="watch.html?category=Women">Women's Watch</a></li>
+            <li><a href="watch.html?category=Popular">Popular Watch</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">Contact</a></li>
+            <li><a href="https://www.facebook.com/share/1Bn8QGmDPj/" target="_blank">Developer Contact</a></li>
+        </ul>
+    </div><!-- Sidebar Toggle -->
+<div id="menu-toggle" class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
-<section class="watch-container" id="women-watch">
-    <h2>Women's Watches</h2>
-</section>
+<!-- Header / Logo -->
+<header>
+    <img src="https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg" alt="HourGlass Logo" class="logo">
+    <h1 class="hourglass-title">HourGlass</h1>
+</header>
 
-<section class="watch-container" id="popular-watch">
-    <h2>Popular Watches</h2>
-</section>
+<!-- Main Content -->
+<main>
+    <!-- Top Selling Section -->
+    <section id="top-selling">
+        <h2>Top Selling Watches</h2>
+        <div class="watch-grid" id="top-selling-grid">
+            <!-- Watches loaded dynamically from JSON -->
+        </div>
+    </section>
 
-</main><footer>
-    <div class="developer">Developed by Supto</div>
+    <!-- Men Watches Section -->
+    <section id="men-watches">
+        <h2>Men's Watches</h2>
+        <div class="watch-grid" id="men-grid">
+            <!-- Watches loaded dynamically from JSON -->
+        </div>
+    </section>
+
+    <!-- Women Watches Section -->
+    <section id="women-watches">
+        <h2>Women's Watches</h2>
+        <div class="watch-grid" id="women-grid">
+            <!-- Watches loaded dynamically from JSON -->
+        </div>
+    </section>
+
+    <!-- Popular Watches Section -->
+    <section id="popular-watches">
+        <h2>Popular Watches</h2>
+        <div class="watch-grid" id="popular-grid">
+            <!-- Watches loaded dynamically from JSON -->
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
     <div class="social-icons">
-        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="FB">
-        </a>
-        <a href="https://www.instagram.com/hourglass.watches.bd?igsh=MWpkNDhpbHpraDVy" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-        </a>
+        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank">FB</a>
+        <a href="https://www.instagram.com/hourglass.watches.bd?igsh=MWpkNDhpbHpraDVy" target="_blank">IG</a>
     </div>
-</footer><script src="script.js"></script><script src="watch.js"></script></body>
+    <p class="developed-by">Developed by Supto</p>
+</footer>
+
+</body>
     </html>
