@@ -1,30 +1,33 @@
-const categories = ['Top-Selling','Men','Women','Popular'];
+// Function to load watches from JSON
+async function loadWatches(type, containerId) {
+    let container = document.getElementById(containerId);
+    container.innerHTML = '';
 
-categories.forEach(category => {
-    const container = document.getElementById(`watch-container${category==='Top-Selling'?'':'-'+category.toLowerCase()}`);
-    if (!container) return;
+    let indexJson = `Watch-Collection/${type}/index.json`;
+    let response = await fetch(indexJson);
+    let watchList = await response.json();
 
-    fetch(`Watch-Collection/${category}/index.json`)
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(watch => {
-            const card = document.createElement('div');
-            card.className = 'watch-card';
-            card.innerHTML = `
-                <img src="${watch.img}" alt="${watch.name}">
-                <h3>${watch.name}</h3>
-                <p>${watch.brand}</p>
-                <p>$${watch.price}</p>
-                <button onclick="addToCart('${watch.id}','${watch.name}','${watch.price}','${watch.img}')">Add to Cart</button>
-            `;
-            container.appendChild(card);
-        });
-    });
+    for (let watchName of watchList) {
+        let watchJson = `Watch-Collection/${type}/${watchName}/watch.json`;
+        let res = await fetch(watchJson);
+        let watchData = await res.json();
+
+        let card = document.createElement('div');
+        card.className = 'watch-card';
+        card.innerHTML = `
+            <img src="${watchData.image}" alt="${watchData.name}">
+            <h3>${watchData.name}</h3>
+            <p>${watchData.price} BDT</p>
+            <button ${watchData.stock === 0 ? 'disabled style="opacity:0.5"' : ''}>Add to Cart</button>
+        `;
+        container.appendChild(card);
+    }
+}
+
+// Homepage load
+document.addEventListener('DOMContentLoaded', () => {
+    loadWatches('Top-Selling','watch-container');
+    loadWatches('Men','watch-container-men');
+    loadWatches('Women','watch-container-women');
+    loadWatches('Popular','watch-container-popular');
 });
-
-function addToCart(id, name, price, img) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({id, name, price, img});
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert('Added to cart!');
-          }
