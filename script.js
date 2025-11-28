@@ -1,12 +1,13 @@
-const sidebarToggle = document.querySelector('.sidebar-toggle');
+// Sidebar toggle
+const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 
-sidebarToggle.addEventListener('click', () => {
-if (sidebar.style.left === '-250px') {
-sidebar.style.left = '0';
-sidebarToggle.textContent = '✖';
-} else {
-sidebar.style.left = '-250px';
-sidebarToggle.textContent = '☰';
-}
+menuToggle.addEventListener('click', () => {
+sidebar.classList.toggle('active');
+menuToggle.classList.toggle('open');
+});
+
+// Optional: transform hamburger to cross
+menuToggle.addEventListener('click', () => {
+menuToggle.classList.toggle('cross');
 });
