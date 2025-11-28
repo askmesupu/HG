@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #000000, #222222);
+    color: white;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+.hourglass-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+.sidebar-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+aside#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+aside#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+aside#sidebar ul li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+aside#sidebar ul li a:hover {
+    background: #333;
+}
+aside#sidebar.active {
+    left: 0;
+}
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+#watch-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.watch-card {
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.watch-card:hover {
+    transform: translateY(-5px);
+}
+.watch-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.watch-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #fff;
+    color: #000;
+}
+.cart-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+.cart-buttons button {
+    flex: 1;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+                                                    }
