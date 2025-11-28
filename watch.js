@@ -1,33 +1,37 @@
-// Function to load watches from JSON
-async function loadWatches(type, containerId) {
-    let container = document.getElementById(containerId);
-    container.innerHTML = '';
+async function loadWatches(sectionId, category) {
+const container = document.getElementById(sectionId);
+try {
+const indexRes = await fetch("Watch-Collection/${category}/index.json");
+const indexData = await indexRes.json();
 
-    let indexJson = `Watch-Collection/${type}/index.json`;
-    let response = await fetch(indexJson);
-    let watchList = await response.json();
+    for (const watchFolder of indexData) {
+        const watchRes = await fetch(`Watch-Collection/${category}/${watchFolder}/watch.json`);
+        const watchData = await watchRes.json();
 
-    for (let watchName of watchList) {
-        let watchJson = `Watch-Collection/${type}/${watchName}/watch.json`;
-        let res = await fetch(watchJson);
-        let watchData = await res.json();
-
-        let card = document.createElement('div');
+        const card = document.createElement('div');
         card.className = 'watch-card';
-        card.innerHTML = `
-            <img src="${watchData.image}" alt="${watchData.name}">
-            <h3>${watchData.name}</h3>
-            <p>${watchData.price} BDT</p>
-            <button ${watchData.stock === 0 ? 'disabled style="opacity:0.5"' : ''}>Add to Cart</button>
-        `;
+
+        const img = document.createElement('img');
+        img.src = watchData.images[0];
+        card.appendChild(img);
+
+        const h3 = document.createElement('h3');
+        h3.textContent = watchData.name;
+        card.appendChild(h3);
+
+        const p = document.createElement('p');
+        p.textContent = `$${watchData.price}`;
+        card.appendChild(p);
+
         container.appendChild(card);
     }
+} catch (err) {
+    console.error('Error loading watches', err);
 }
 
-// Homepage load
-document.addEventListener('DOMContentLoaded', () => {
-    loadWatches('Top-Selling','watch-container');
-    loadWatches('Men','watch-container-men');
-    loadWatches('Women','watch-container-women');
-    loadWatches('Popular','watch-container-popular');
-});
+}
+
+loadWatches('top-selling', 'Top-Selling');
+loadWatches('men-watch', 'Men');
+loadWatches('women-watch', 'Women');
+loadWatches('popular-watch', 'Popular');
