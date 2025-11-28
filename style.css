@@ -1,130 +1,117 @@
 body {
 margin: 0;
-padding: 0;
-background: #000;
-color: white;
 font-family: 'Press Start 2P', cursive;
+background: #000;
+color: #fff;
 }
 
-/* Header */
 header {
 display: flex;
+justify-content: center;
 align-items: center;
-padding: 10px 20px;
-position: relative;
-background: #000;
-z-index: 1000;
+padding: 20px;
 }
 
-.logo img {
+.logo-container {
+display: flex;
+align-items: center;
+}
+
+.logo {
 width: 80px;
 height: auto;
+margin-right: 15px;
 }
 
-.hourglass-text {
-font-family: 'Chalkduster', cursive;
-font-size: 36px;
-margin-left: 20px;
-color: white;
+.hourglass-title {
+font-family: 'Chalkboard SE', 'cursive';
+font-size: 40px;
+color: #fff;
 }
 
-/* Sidebar */
-#sidebar {
+.sidebar {
 position: fixed;
 top: 0;
 left: -250px;
-width: 250px;
+width: 220px;
 height: 100%;
 background: #111;
-color: white;
+transition: left 0.3s;
 display: flex;
-flex-direction: column;
-justify-content: center;
-padding-left: 20px;
-transition: left 0.3s ease;
-z-index: 999;
+align-items: center;
 }
 
-#sidebar ul {
+.sidebar ul {
 list-style: none;
 padding: 0;
-margin: 0;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
-
-#sidebar ul li {
-margin: 15px 0;
-}
-
-#sidebar ul li a {
-color: white;
-text-decoration: none;
-font-size: 18px;
-font-family: 'Press Start 2P', cursive;
-}
-
-#sidebar ul li a:hover {
-color: #ffcc00;
-}
-
-.sidebar-toggle {
-font-size: 24px;
-cursor: pointer;
-margin-right: 10px;
-user-select: none;
-}
-
-/* Watch cards */
-.watch-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-padding: 20px;
-}
-
-.watch-card {
-width: 200px;
-margin: 10px;
-background: #111;
-border: 1px solid #333;
-border-radius: 10px;
-overflow: hidden;
-transition: all 0.5s ease-in;
-}
-
-.watch-card img {
+margin: auto 0; /* Center vertically */
 width: 100%;
+}
+
+.sidebar ul li {
+padding: 15px 20px;
+text-align: center;
+}
+
+.sidebar ul li a {
+color: #fff;
+text-decoration: none;
 display: block;
 }
 
-.watch-card h3, .watch-card p {
-margin: 5px 10px;
-font-family: 'Press Start 2P', cursive;
-font-size: 12px;
-color: white;
+.menu-toggle {
+position: fixed;
+top: 20px;
+left: 20px;
+cursor: pointer;
+z-index: 1000;
 }
 
-/* Footer */
-footer {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-padding: 20px;
-background: #111;
-color: white;
-}
-
-footer .developer {
-font-weight: bold;
-margin-bottom: 10px;
-}
-
-footer .social-icons a img {
+.menu-toggle span {
+display: block;
 width: 30px;
-height: 30px;
-margin: 0 5px;
+height: 4px;
+margin: 6px 0;
+background: #fff;
+}
+
+.sidebar.active {
+left: 0;
+}
+
+main {
+padding: 20px;
+}
+
+.watch-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.watch-grid .watch-card {
+width: 200px;
+background: #222;
+padding: 10px;
+border-radius: 10px;
+text-align: center;
+}
+
+footer {
+text-align: center;
+padding: 15px;
+border-top: 1px solid #444;
+margin-top: 50px;
+}
+
+footer .social-icons a {
+margin: 0 10px;
+color: #fff;
+text-decoration: none;
+}
+
+footer .developed-by {
+font-weight: bold;
+color: #fff;
+margin-top: 5px;
 }
