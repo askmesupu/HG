@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HourGlass — Home</title>
+
+  <!-- Fonts: Rock Salt for brand (chalky) + Montserrat for UI -->
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="watch.js" defer></script>
+</head>
+<body>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar" aria-hidden="true">
+    <button id="closeSidebar" class="sidebar-close" aria-label="Close menu">✕</button>
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <img src="assets/logo.png" alt="HourGlass" onerror="this.onerror=null;this.src='https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg'">
+        <div class="brand-big">HourGlass</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="index.html">Home</a>
+        <a href="#top-selling">Top Selling</a>
+        <a href="#men">Men's Watches</a>
+        <a href="#women">Women's Watches</a>
+        <a href="#popular">Popular</a>
+        <a href="cart.html">Cart</a>
+        <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank" rel="noopener">HourGlass Facebook</a>
+        <a href="https://www.facebook.com/share/1Bn8QGmDPj/" target="_blank" rel="noopener">Developer Contact</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand-left">
+      <img class="logo" src="assets/logo.png" alt="HourGlass logo"
+           onerror="this.onerror=null;this.src='https://i.ibb.co/MD4g4YFS/resize-1762250039179255336320251104154152.jpg'">
+      <div class="brand-big">HourGlass</div>
+    </div>
+
+    <div class="top-right">
+      <a class="icon cart-link" href="cart.html" title="Cart">Cart</a>
+
+      <button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span class="hamburger line1"></span>
+        <span class="hamburger line2"></span>
+        <span class="hamburger line3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">Premium Watch Collection</h1>
+      <p class="hero-sub">Curated, authentic & ready to wear.</p>
+    </section>
+
+    <!-- Top Selling -->
+    <section id="top-selling" class="section">
+      <h2 class="section-title">Top Selling</h2>
+      <div id="carousel-top-selling" class="product-carousel"></div>
+    </section>
+
+    <!-- Men -->
+    <section id="men" class="section">
+      <h2 class="section-title">Men's Watches</h2>
+      <div id="grid-men" class="product-grid"></div>
+    </section>
+
+    <!-- Women -->
+    <section id="women" class="section">
+      <h2 class="section-title">Women's Watches</h2>
+      <div id="grid-women" class="product-grid"></div>
+    </section>
+
+    <!-- Popular -->
+    <section id="popular" class="section">
+      <h2 class="section-title">Popular</h2>
+      <div id="grid-popular" class="product-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="socials">
+      <a href="https://www.facebook.com/share/17ggXzH3uw/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/hourglass.watches.bd?igsh=MWpkNDhpbHpraDVy" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <div class="credit">Developed by Supto</div>
+  </footer>
+
+</body>
+  </html>
